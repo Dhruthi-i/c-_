@@ -294,4 +294,103 @@ class Program
 // }
 
 
+// printCharacterPattern
+
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         int n = int.Parse(Console.ReadLine());
+//         string s = "";
+
+//         for (int i = 0; i < n; i++)
+//         {
+//             s += (char)('a' + i);   // add next character
+//             Console.WriteLine(s);
+//         }
+//     }
+// }
+///////////////////////////////
+
+// class Program
+// {
+//     static void Main()
+//     {
+//         int n = int.Parse(Console.ReadLine());
+//         PrintColor(n);
+//     }
+
+//     static void PrintColor(int num)
+//     {
+//         switch (num)
+//         {
+//             case 1:
+//                 Console.Write("red");
+//                 break;
+//             case 2:
+//                 Console.Write("black");
+//                 break;
+//             case 3:
+//                 Console.Write("white");
+//                 break;
+//             case 4:
+//                 Console.Write("green");
+//                 break;
+//             default:
+//                 Console.Write("no color");
+//                 break;
+//         }
+//     }
+// }
+
+
+using System;
+// class Program
+// {
+//     static void Main()
+//     {
+//         int n = int.Parse(Console.ReadLine());
+
+//         for (int i = 1; i <= n; i++)
+//         {
+//             Console.WriteLine(new string('1', i * 2));
+//         }
+//     }
+// }
+
+
+// class Program
+{
+    static void Main()
+    {
+        string input = Console.ReadLine();   // example: "5,7,4"
+        string[] parts = input.Split(' ');
+
+        int a = int.Parse(parts[0]);
+        int b = int.Parse(parts[1]);
+        int c = int.Parse(parts[2]);
+
+        int middle = GetMiddle(a, b, c);
+        int maximum = Math.Max(a, Math.Max(b, c));
+
+        Console.WriteLine(middle * maximum);
+    }
+
+    static int GetMiddle(int x, int y, int z)
+    {
+        // If x is middle
+        if ((x > y && x < z) || (x < y && x > z))
+            return x;
+
+        // If y is middle
+        if ((y > x && y < z) || (y < x && y > z))
+            return y;
+
+        // Otherwise z is middle
+        return z;
+    }
+}
+
+
 
